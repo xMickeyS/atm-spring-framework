@@ -1,4 +1,4 @@
-package atm;
+package annotation;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;

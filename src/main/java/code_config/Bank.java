@@ -1,4 +1,4 @@
-package atm;
+package code_config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,17 +12,18 @@ import java.util.Map;
  */
 @Component
 public class Bank {
-   @Value("${bankname}")
    private String name;
    private Map<Integer,Customer> customers;
-   @Autowired
    private DataSource dataSource;
 
-   @PostConstruct
-   public void initCustomerData(){
+   /**
+    * Constructs a bank with no customers.
+    */
+   public Bank(String name, DataSource dataSource) {
+      this.name = name;
+      this.dataSource = dataSource;
       this.customers = dataSource.readCustomers();
    }
-
 
    /**
     * Adds a customer to the bank.

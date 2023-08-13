@@ -1,4 +1,4 @@
-package atm;
+package code_config;
 
 /**
  * A bank customer with a checking and a savings account.
@@ -8,6 +8,7 @@ public class Customer {
    private int id;
    private String name;
    private int pin;
+
    private BankAccount account;
 
    /**
